@@ -1,6 +1,5 @@
 package ejercicios;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio5 {
@@ -8,16 +7,13 @@ public class Ejercicio5 {
     public static boolean cumpleCondicion(int numero, int m, int d){
         String number = String.valueOf(numero);
 
-        char[] digitos = number.toCharArray();
-
-        char digitoBuscado = Character.forDigit(d,10);
+        char digitoBuscado = (char)(d+'0');
 
         int cantidadDigitos = 0;
 
-        for (char digito : digitos) {
-            if (digito == digitoBuscado) {
-                cantidadDigitos += 1;
-            }
+        for(int i = 0; i < number.length(); i++) {
+            if(number.charAt(i) == digitoBuscado)
+                cantidadDigitos++;
         }
 
         return cantidadDigitos >= m;
